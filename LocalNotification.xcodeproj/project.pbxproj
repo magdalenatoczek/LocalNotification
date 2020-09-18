@@ -13,6 +13,7 @@
 		AA1191F12514909700B0D74A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1191EF2514909700B0D74A /* Main.storyboard */; };
 		AA1191F32514909900B0D74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1191F22514909900B0D74A /* Assets.xcassets */; };
 		AA1191F62514909900B0D74A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1191F42514909900B0D74A /* LaunchScreen.storyboard */; };
+		AA119202251494A500B0D74A /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA119201251494A500B0D74A /* UserNotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AA1191F22514909900B0D74A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1191F52514909900B0D74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1191F72514909900B0D74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA119201251494A500B0D74A /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		AA1191E82514909700B0D74A /* LocalNotification */ = {
 			isa = PBXGroup;
 			children = (
+				AA1191FD2514944A00B0D74A /* Model */,
+				AA1191FE2514945B00B0D74A /* View */,
+				AA1191FF2514946100B0D74A /* Controller */,
+				AA1192002514946E00B0D74A /* Service */,
 				AA1191E92514909700B0D74A /* AppDelegate.swift */,
 				AA1191EB2514909700B0D74A /* SceneDelegate.swift */,
-				AA1191ED2514909700B0D74A /* ViewController.swift */,
 				AA1191EF2514909700B0D74A /* Main.storyboard */,
 				AA1191F22514909900B0D74A /* Assets.xcassets */,
 				AA1191F42514909900B0D74A /* LaunchScreen.storyboard */,
 				AA1191F72514909900B0D74A /* Info.plist */,
 			);
 			path = LocalNotification;
+			sourceTree = "<group>";
+		};
+		AA1191FD2514944A00B0D74A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA1191FE2514945B00B0D74A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA1191FF2514946100B0D74A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA1191ED2514909700B0D74A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA1192002514946E00B0D74A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AA119201251494A500B0D74A /* UserNotificationService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +176,7 @@
 				AA1191EE2514909700B0D74A /* ViewController.swift in Sources */,
 				AA1191EA2514909700B0D74A /* AppDelegate.swift in Sources */,
 				AA1191EC2514909700B0D74A /* SceneDelegate.swift in Sources */,
+				AA119202251494A500B0D74A /* UserNotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
