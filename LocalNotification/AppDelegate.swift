@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UserNotificationService.INSTANCE.autorize()
-        
+        UserNotificationServiceForTime.INSTANCE.authorize()
+        UserNotificationServiceForLocation.INSTANCE.authorize()
 
         return true
     }

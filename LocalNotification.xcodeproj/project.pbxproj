@@ -13,7 +13,10 @@
 		AA1191F12514909700B0D74A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1191EF2514909700B0D74A /* Main.storyboard */; };
 		AA1191F32514909900B0D74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1191F22514909900B0D74A /* Assets.xcassets */; };
 		AA1191F62514909900B0D74A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1191F42514909900B0D74A /* LaunchScreen.storyboard */; };
-		AA119202251494A500B0D74A /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA119201251494A500B0D74A /* UserNotificationService.swift */; };
+		AA119202251494A500B0D74A /* UserNotificationServiceForTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA119201251494A500B0D74A /* UserNotificationServiceForTime.swift */; };
+		AA4AD0E92517644100684B56 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AD0E82517644100684B56 /* AlertService.swift */; };
+		AA4AD0ED2517699A00684B56 /* UserNotificationServiceForLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */; };
+		AA54D6872514CC5F00F32873 /* TriggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54D6862514CC5F00F32873 /* TriggerType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,10 @@
 		AA1191F22514909900B0D74A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1191F52514909900B0D74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1191F72514909900B0D74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA119201251494A500B0D74A /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
+		AA119201251494A500B0D74A /* UserNotificationServiceForTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationServiceForTime.swift; sourceTree = "<group>"; };
+		AA4AD0E82517644100684B56 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationServiceForLocation.swift; sourceTree = "<group>"; };
+		AA54D6862514CC5F00F32873 /* TriggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		AA1191E82514909700B0D74A /* LocalNotification */ = {
 			isa = PBXGroup;
 			children = (
+				AA54D6852514CC4500F32873 /* Enums */,
 				AA1191FD2514944A00B0D74A /* Model */,
 				AA1191FE2514945B00B0D74A /* View */,
 				AA1191FF2514946100B0D74A /* Controller */,
@@ -97,9 +104,19 @@
 		AA1192002514946E00B0D74A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AA119201251494A500B0D74A /* UserNotificationService.swift */,
+				AA119201251494A500B0D74A /* UserNotificationServiceForTime.swift */,
+				AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */,
+				AA4AD0E82517644100684B56 /* AlertService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		AA54D6852514CC4500F32873 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				AA54D6862514CC5F00F32873 /* TriggerType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,8 +192,11 @@
 			files = (
 				AA1191EE2514909700B0D74A /* ViewController.swift in Sources */,
 				AA1191EA2514909700B0D74A /* AppDelegate.swift in Sources */,
+				AA4AD0ED2517699A00684B56 /* UserNotificationServiceForLocation.swift in Sources */,
 				AA1191EC2514909700B0D74A /* SceneDelegate.swift in Sources */,
-				AA119202251494A500B0D74A /* UserNotificationService.swift in Sources */,
+				AA119202251494A500B0D74A /* UserNotificationServiceForTime.swift in Sources */,
+				AA4AD0E92517644100684B56 /* AlertService.swift in Sources */,
+				AA54D6872514CC5F00F32873 /* TriggerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 453S2XSH66;
 				INFOPLIST_FILE = LocalNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,6 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 453S2XSH66;
 				INFOPLIST_FILE = LocalNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
