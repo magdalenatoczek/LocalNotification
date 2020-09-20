@@ -16,6 +16,7 @@ class UserNotificationServiceForLocation: NSObject {
     static let INSTANCE = UserNotificationServiceForLocation()
     
     let locationManager = CLLocationManager()
+    var shouldSetRegion = true
     
     func authorize(){
         locationManager.requestWhenInUseAuthorization()
@@ -26,6 +27,7 @@ class UserNotificationServiceForLocation: NSObject {
     }
     
     func updateLocation(){
+        shouldSetRegion = true
         locationManager.startUpdatingLocation()
     }
     
@@ -37,9 +39,22 @@ class UserNotificationServiceForLocation: NSObject {
 extension UserNotificationServiceForLocation: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("location")
+        print("location updated")
+        
+        guard let currentLocation = locations.first, shouldSetRegion else { return }
+        shouldSetRegion = false
+        let region = CLCircularRegion(center: currentLocation.coordinate, radius: 20, identifier: "startPosition")
+        manager.startMonitoring(for: region)
+        
     }
     
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("did enter region via core Location")
+        NotificationCenter.default.post(name: NSNotification.Name("internalNotification.enteredRegion"), object: nil)
+        
+        
+        
+    }
     
     
 }

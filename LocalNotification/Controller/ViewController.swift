@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import UserNotifications
 
 
 class ViewController: UIViewController {
     
   let TIMER_NOTIFICATION_HOUR = "UserNotification.everyHour"
     let DATE_NOTIFICATION_MONDAY = "UserNotification.data.monday"
-    
+    let LOCATION_NOTIFICATION_REGION = "UserNotification.location.myRegion"
     
     
     var notificationNumber = 0
@@ -23,11 +24,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterRegion), name: NSNotification.Name("internalNotification.enteredRegion"), object: nil)
     
     }
 
     
-    
+    @objc func didEnterRegion(){
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Location Notification"
+        content.body = "You have returned"
+        content.sound = .default
+        content.badge = 1
+        UserNotificationService.INSTANCE.locationNotification(identifier: LOCATION_NOTIFICATION_REGION, content: content)
+        
+    }
     
     
     
@@ -44,7 +56,7 @@ class ViewController: UIViewController {
         content.badge = 1
         
         AlertService.alertConfirmingTheAcion(in: self, title: "timer nofitication", message: "one hour") {
-            UserNotificationServiceForTime.INSTANCE.triggerTheNotification(triggerType: .timeInterval, identifier: self.TIMER_NOTIFICATION_HOUR, content: content, components: nil, interval: 3600, repeats: true)
+            UserNotificationService.INSTANCE.triggerTheNotification(triggerType: .timeInterval, identifier: self.TIMER_NOTIFICATION_HOUR, content: content, components: nil, interval: 3600, repeats: true)
         }
     }
     
@@ -62,7 +74,7 @@ class ViewController: UIViewController {
         components.weekday = 1
         
         AlertService.alertConfirmingTheAcion(in: self, title: "data notification", message: "on monday") {
-            UserNotificationServiceForTime.INSTANCE.triggerTheNotification(triggerType: .calendar, identifier: self.DATE_NOTIFICATION_MONDAY, content: content, components: components, interval: nil, repeats: true)
+            UserNotificationService.INSTANCE.triggerTheNotification(triggerType: .calendar, identifier: self.DATE_NOTIFICATION_MONDAY, content: content, components: components, interval: nil, repeats: true)
         }
        
         
@@ -75,8 +87,8 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func localizationPressed(_ sender: Any) {
-        print("localization")
+    @IBAction func locationButtonPressed(_ sender: Any) {
+        print("location clicked")
         
         AlertService.alertConfirmingTheAcion(in: self, title: "Location notification", message: " ") {
             UserNotificationServiceForLocation.INSTANCE.updateLocation()

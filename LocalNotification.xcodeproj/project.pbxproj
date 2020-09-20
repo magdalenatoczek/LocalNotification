@@ -13,7 +13,7 @@
 		AA1191F12514909700B0D74A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1191EF2514909700B0D74A /* Main.storyboard */; };
 		AA1191F32514909900B0D74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1191F22514909900B0D74A /* Assets.xcassets */; };
 		AA1191F62514909900B0D74A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1191F42514909900B0D74A /* LaunchScreen.storyboard */; };
-		AA119202251494A500B0D74A /* UserNotificationServiceForTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA119201251494A500B0D74A /* UserNotificationServiceForTime.swift */; };
+		AA119202251494A500B0D74A /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA119201251494A500B0D74A /* UserNotificationService.swift */; };
 		AA4AD0E92517644100684B56 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AD0E82517644100684B56 /* AlertService.swift */; };
 		AA4AD0ED2517699A00684B56 /* UserNotificationServiceForLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */; };
 		AA54D6872514CC5F00F32873 /* TriggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54D6862514CC5F00F32873 /* TriggerType.swift */; };
@@ -28,7 +28,7 @@
 		AA1191F22514909900B0D74A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1191F52514909900B0D74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1191F72514909900B0D74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA119201251494A500B0D74A /* UserNotificationServiceForTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationServiceForTime.swift; sourceTree = "<group>"; };
+		AA119201251494A500B0D74A /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		AA4AD0E82517644100684B56 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationServiceForLocation.swift; sourceTree = "<group>"; };
 		AA54D6862514CC5F00F32873 /* TriggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerType.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		AA1192002514946E00B0D74A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AA119201251494A500B0D74A /* UserNotificationServiceForTime.swift */,
+				AA119201251494A500B0D74A /* UserNotificationService.swift */,
 				AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */,
 				AA4AD0E82517644100684B56 /* AlertService.swift */,
 			);
@@ -146,7 +146,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Popeq Apps";
 				TargetAttributes = {
 					AA1191E52514909700B0D74A = {
@@ -194,7 +194,7 @@
 				AA1191EA2514909700B0D74A /* AppDelegate.swift in Sources */,
 				AA4AD0ED2517699A00684B56 /* UserNotificationServiceForLocation.swift in Sources */,
 				AA1191EC2514909700B0D74A /* SceneDelegate.swift in Sources */,
-				AA119202251494A500B0D74A /* UserNotificationServiceForTime.swift in Sources */,
+				AA119202251494A500B0D74A /* UserNotificationService.swift in Sources */,
 				AA4AD0E92517644100684B56 /* AlertService.swift in Sources */,
 				AA54D6872514CC5F00F32873 /* TriggerType.swift in Sources */,
 			);
@@ -248,6 +248,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -308,6 +309,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

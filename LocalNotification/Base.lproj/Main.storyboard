@@ -20,8 +20,8 @@
                                 <rect key="frame" x="97" y="100" width="220" height="80"/>
                                 <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="5DI-Nh-RjN"/>
-                                    <constraint firstAttribute="height" constant="80" id="Ozs-8E-g4Z"/>
+                                    <constraint firstAttribute="height" constant="80" identifier="c" id="aUF-aC-bPh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" identifier="d" id="ffv-hg-27v"/>
                                 </constraints>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="   Set Time">
@@ -37,8 +37,8 @@
                                 <rect key="frame" x="97" y="200" width="220" height="80"/>
                                 <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="Yaa-Hf-sO7"/>
-                                    <constraint firstAttribute="height" constant="80" id="ze6-Bt-7J6"/>
+                                    <constraint firstAttribute="height" constant="80" identifier="e" id="0QV-ui-DtC"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" identifier="f" id="1BY-zc-CIH"/>
                                 </constraints>
                                 <state key="normal" title="set Date">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,26 +51,26 @@
                                 <rect key="frame" x="97" y="300" width="220" height="80"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="gek-Kb-fBl"/>
-                                    <constraint firstAttribute="height" constant="80" id="moI-Nc-Wae"/>
+                                    <constraint firstAttribute="height" constant="80" identifier="h" id="bRr-2a-c3A"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" identifier="i" id="nPr-g3-D1Q"/>
                                 </constraints>
                                 <state key="normal" title="Location">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="localizationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OnZ-6Y-tTO"/>
+                                    <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OnZ-6Y-tTO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.76604460555277831" blue="0.62049450140456974" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6SI-DD-Wla" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Tr-Yb-xPA"/>
-                            <constraint firstItem="uax-RY-nbC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZVd-yh-wOR"/>
-                            <constraint firstItem="i4x-ky-IHr" firstAttribute="top" secondItem="6SI-DD-Wla" secondAttribute="bottom" constant="20" id="dIw-FJ-tHi"/>
-                            <constraint firstItem="uax-RY-nbC" firstAttribute="top" secondItem="i4x-ky-IHr" secondAttribute="bottom" constant="20" id="fXg-Gf-y1b"/>
-                            <constraint firstItem="6SI-DD-Wla" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="rcX-QB-zPc"/>
-                            <constraint firstItem="i4x-ky-IHr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ule-uf-Ovp"/>
+                            <constraint firstItem="i4x-ky-IHr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PGe-km-BYC"/>
+                            <constraint firstItem="i4x-ky-IHr" firstAttribute="top" secondItem="6SI-DD-Wla" secondAttribute="bottom" constant="20" id="UuP-K5-CBc"/>
+                            <constraint firstItem="uax-RY-nbC" firstAttribute="top" secondItem="i4x-ky-IHr" secondAttribute="bottom" constant="20" identifier="g" id="egB-Oz-4cL"/>
+                            <constraint firstItem="6SI-DD-Wla" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" identifier="a" id="kcp-Qy-YkM"/>
+                            <constraint firstItem="6SI-DD-Wla" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" identifier="b" id="pDz-EV-4nX"/>
+                            <constraint firstItem="uax-RY-nbC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zg0-mz-ej7"/>
                         </constraints>
                     </view>
                 </viewController>

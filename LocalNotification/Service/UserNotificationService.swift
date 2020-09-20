@@ -10,11 +10,11 @@ import Foundation
 import UserNotifications
 
 
-class UserNotificationServiceForTime : NSObject {
+class UserNotificationService : NSObject {
     
     private override init() {}
     
-    static let INSTANCE = UserNotificationServiceForTime()
+    static let INSTANCE = UserNotificationService()
     
     let unCenter = UNUserNotificationCenter.current()
     
@@ -48,6 +48,15 @@ class UserNotificationServiceForTime : NSObject {
     }
     
     
+    func locationNotification(identifier: String, content: UNMutableNotificationContent){
+    
+        let request = UNNotificationRequest(identifier: identifier, content:content, trigger: nil)
+        unCenter.add(request, withCompletionHandler: nil)
+        
+    }
+    
+    
+    
     func triggerTheNotification(triggerType: TriggerType, identifier: String, content: UNMutableNotificationContent, components: DateComponents?,  interval : TimeInterval?, repeats: Bool){
         
         var trigger: UNNotificationTrigger!
@@ -65,6 +74,7 @@ class UserNotificationServiceForTime : NSObject {
             } else {
                 debugPrint("interval can't be nil when triggerType is .timeInterval")
             }
+
         }
         
         if let trigger = trigger {
@@ -82,7 +92,7 @@ class UserNotificationServiceForTime : NSObject {
 }
 
 
-extension UserNotificationServiceForTime : UNUserNotificationCenterDelegate {
+extension UserNotificationService : UNUserNotificationCenterDelegate {
     
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
