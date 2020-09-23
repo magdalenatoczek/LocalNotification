@@ -48,6 +48,16 @@ class UserNotificationService : NSObject {
     }
     
     
+    
+    func getAttachment(url : URL, id: String)-> UNNotificationAttachment? {
+        do{
+            let attachment = try UNNotificationAttachment(identifier: id, url: url)
+            return attachment
+        } catch {
+            return nil
+        }
+    }
+
     func locationNotification(identifier: String, content: UNMutableNotificationContent){
     
         let request = UNNotificationRequest(identifier: identifier, content:content, trigger: nil)

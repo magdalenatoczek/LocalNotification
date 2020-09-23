@@ -17,6 +17,7 @@
 		AA4AD0E92517644100684B56 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AD0E82517644100684B56 /* AlertService.swift */; };
 		AA4AD0ED2517699A00684B56 /* UserNotificationServiceForLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */; };
 		AA54D6872514CC5F00F32873 /* TriggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54D6862514CC5F00F32873 /* TriggerType.swift */; };
+		AA75CCB9251B9FA700AAF5B9 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = AA75CCB8251B9FA700AAF5B9 /* download.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AA4AD0E82517644100684B56 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		AA4AD0EC2517699A00684B56 /* UserNotificationServiceForLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationServiceForLocation.swift; sourceTree = "<group>"; };
 		AA54D6862514CC5F00F32873 /* TriggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerType.swift; sourceTree = "<group>"; };
+		AA75CCB8251B9FA700AAF5B9 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		AA1191FE2514945B00B0D74A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA75CCB7251B9F2300AAF5B9 /* NotificationAttachments */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +120,14 @@
 				AA54D6862514CC5F00F32873 /* TriggerType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		AA75CCB7251B9F2300AAF5B9 /* NotificationAttachments */ = {
+			isa = PBXGroup;
+			children = (
+				AA75CCB8251B9FA700AAF5B9 /* download.png */,
+			);
+			path = NotificationAttachments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				AA1191F62514909900B0D74A /* LaunchScreen.storyboard in Resources */,
 				AA1191F32514909900B0D74A /* Assets.xcassets in Resources */,
 				AA1191F12514909700B0D74A /* Main.storyboard in Resources */,
+				AA75CCB9251B9FA700AAF5B9 /* download.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

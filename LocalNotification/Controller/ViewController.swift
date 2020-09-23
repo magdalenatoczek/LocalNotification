@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import UserNotifications
+
 
 
 class ViewController: UIViewController {
     
   let TIMER_NOTIFICATION_HOUR = "UserNotification.everyHour"
-    let DATE_NOTIFICATION_MONDAY = "UserNotification.data.monday"
-    let LOCATION_NOTIFICATION_REGION = "UserNotification.location.myRegion"
+  let DATE_NOTIFICATION_MONDAY = "UserNotification.data.monday"
+  let LOCATION_NOTIFICATION_REGION = "UserNotification.location.myRegion"
     
     
     var notificationNumber = 0
@@ -42,7 +42,13 @@ class ViewController: UIViewController {
     }
     
     
-    
+    func getResource(name: String, withExtension: String)-> URL? {
+        if let url = Bundle.main.url(forResource: name, withExtension: withExtension) {
+            return url
+        }else{
+            return nil
+        }
+    }
     
     
     @IBAction func timesButtonPressed(_ sender: Any) {
@@ -51,12 +57,18 @@ class ViewController: UIViewController {
       
         let content = UNMutableNotificationContent()
         content.title = "Timer Notification"
-        content.body = "new notification every hour"
+        content.body = "new notification 6 min"
         content.sound = .default
         content.badge = 1
         
-        AlertService.alertConfirmingTheAcion(in: self, title: "timer nofitication", message: "one hour") {
-            UserNotificationService.INSTANCE.triggerTheNotification(triggerType: .timeInterval, identifier: self.TIMER_NOTIFICATION_HOUR, content: content, components: nil, interval: 3600, repeats: true)
+        if let url = getResource(name: "download", withExtension: "png"){
+            if let attachment = UserNotificationService.INSTANCE.getAttachment(url: url, id: "notificationAttachment.Timer"){
+                content.attachments = [attachment]
+            }
+        }
+        
+        AlertService.alertConfirmingTheAcion(in: self, title: "timer nofitication", message: "6 min") {
+            UserNotificationService.INSTANCE.triggerTheNotification(triggerType: .timeInterval, identifier: self.TIMER_NOTIFICATION_HOUR, content: content, components: nil, interval: 360, repeats: true)
         }
     }
     
