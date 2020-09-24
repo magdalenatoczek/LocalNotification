@@ -44,6 +44,27 @@ class UserNotificationService : NSObject {
     
     func configure(){
         unCenter.delegate = self
+        setupActionsAndCategoriesForAllNotifications()
+    }
+    
+    func setupActionsAndCategoriesForAllNotifications() {
+        
+        //  == timer ==
+        let timerAction = UNNotificationAction(identifier: NotificationActionID.timer.rawValue, title: "time out", options: .authenticationRequired)
+        let timerCategory = UNNotificationCategory(identifier: NotificationCategoryID.timer.rawValue, actions: [timerAction], intentIdentifiers: [], options: [])
+
+        
+        //  == calendar ==
+        let dateAction = UNNotificationAction(identifier: NotificationActionID.calendar.rawValue, title: "let's go", options: .destructive)
+        let dateCategory = UNNotificationCategory(identifier: NotificationCategoryID.calendar.rawValue, actions: [dateAction], intentIdentifiers: [], options: [])
+        
+        //  == location ==
+        
+        let locationAction = UNNotificationAction(identifier: NotificationActionID.location.rawValue, title: "are you home?", options: .foreground)
+        let locationCategory = UNNotificationCategory(identifier: NotificationCategoryID.location.rawValue, actions: [locationAction], intentIdentifiers: [], options: [])
+        
+
+        unCenter.setNotificationCategories([timerCategory,dateCategory, locationCategory])
         
     }
     
@@ -57,6 +78,7 @@ class UserNotificationService : NSObject {
             return nil
         }
     }
+    
 
     func locationNotification(identifier: String, content: UNMutableNotificationContent){
     
@@ -108,6 +130,9 @@ extension UserNotificationService : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
        // debugPrint("User Notification did recive response")
         //user tapped notification
+        
+        
+        
         completionHandler()
     }
     

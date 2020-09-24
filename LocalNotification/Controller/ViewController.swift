@@ -54,12 +54,15 @@ class ViewController: UIViewController {
     @IBAction func timesButtonPressed(_ sender: Any) {
         
         print("timebuttonClicked")
+        
+        
       
         let content = UNMutableNotificationContent()
         content.title = "Timer Notification"
-        content.body = "new notification 6 min"
+        content.body = "new notification 7 min"
         content.sound = .default
         content.badge = 1
+        content.categoryIdentifier = NotificationCategoryID.timer.rawValue
         
         if let url = getResource(name: "download", withExtension: "png"){
             if let attachment = UserNotificationService.INSTANCE.getAttachment(url: url, id: "notificationAttachment.Timer"){
@@ -67,23 +70,24 @@ class ViewController: UIViewController {
             }
         }
         
-        AlertService.alertConfirmingTheAcion(in: self, title: "timer nofitication", message: "6 min") {
-            UserNotificationService.INSTANCE.triggerTheNotification(triggerType: .timeInterval, identifier: self.TIMER_NOTIFICATION_HOUR, content: content, components: nil, interval: 360, repeats: true)
+        AlertService.alertConfirmingTheAcion(in: self, title: "timer nofitication", message: "70s") {
+            UserNotificationService.INSTANCE.triggerTheNotification(triggerType: .timeInterval, identifier: self.TIMER_NOTIFICATION_HOUR, content: content, components: nil, interval: 70, repeats: true)
         }
     }
     
     
     @IBAction func dataButtonPressed(_ sender: Any) {
         print("data")
-      
+        
         let content = UNMutableNotificationContent()
         content.title = "DataNotification"
         content.body = "new notification every monday"
         content.sound = .default
         content.badge = 1
+        content.categoryIdentifier = NotificationCategoryID.calendar.rawValue
         
         var components = DateComponents()
-        components.weekday = 1
+        components.second = 0
         
         AlertService.alertConfirmingTheAcion(in: self, title: "data notification", message: "on monday") {
             UserNotificationService.INSTANCE.triggerTheNotification(triggerType: .calendar, identifier: self.DATE_NOTIFICATION_MONDAY, content: content, components: components, interval: nil, repeats: true)
@@ -102,8 +106,21 @@ class ViewController: UIViewController {
     @IBAction func locationButtonPressed(_ sender: Any) {
         print("location clicked")
         
+
+        let content = UNMutableNotificationContent()
+        content.title = "Location Notification"
+        content.body = "you are back home"
+        content.sound = .default
+        content.badge = 1
+        content.categoryIdentifier = NotificationCategoryID.location.rawValue
+        
+        
+        
+        
+        
         AlertService.alertConfirmingTheAcion(in: self, title: "Location notification", message: " ") {
             UserNotificationServiceForLocation.INSTANCE.updateLocation()
+            UserNotificationService.INSTANCE.locationNotification(identifier: "UserNotification.location.myRegion", content: content)
         }
         
  
